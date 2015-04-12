@@ -5,18 +5,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class MySqlHelper extends SQLiteOpenHelper{
-	//Êı¾İ¿âÃû³Æ
+	//æ•°æ®åº“åç§°
 	public final static String DATA_BASE_NAME = "mylibrary";
 	public final static int DATA_BASE_VERSION = 1;
-	//±íÃû
+	//è¡¨å
 	public final static String TABLE_NAME = "mylib";
-	//×Ö¶ÎÃû³Æ
-	public final static String BOOK_NAME = "book_name";  //Êé±¾Ãû³Æ
-	public final static String EDITOR_AND_PUBLIC = "editor_and_public";  //Ö÷±à£¬³ö°æÉç
-	public final static String BOOK_ID = "book_id"; //Ë÷ÊéºÅ
-	public final static String BARCODE = "barcode"; //ÌõÂëºÅ
-	public final static String PLACE = "place"; //¹İ²ØµØ
-	public final static String CAN_BORROW_NUM = "can_borrow_num"; //¿É½è¸±±¾
+	//å­—æ®µåç§°
+	public final static String BOOK_NAME = "book_name";  //ä¹¦æœ¬åç§°
+	public final static String EDITOR_AND_PUBLIC = "editor_and_public";  //ä¸»ç¼–ï¼Œå‡ºç‰ˆç¤¾
+	public final static String BOOK_ID = "book_id"; //ç´¢ä¹¦å·
+	public final static String BARCODE = "barcode"; //æ¡ç å·
+	public final static String PLACE = "place"; //é¦†è—åœ°
+	public final static String CAN_BORROW_NUM = "can_borrow_num"; //å¯å€Ÿå‰¯æœ¬
 
 	public MySqlHelper(Context context) {
 		super(context, DATA_BASE_NAME, null, DATA_BASE_VERSION);

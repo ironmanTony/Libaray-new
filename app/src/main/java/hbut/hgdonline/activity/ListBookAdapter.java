@@ -57,12 +57,12 @@ public class ListBookAdapter extends BaseAdapter{
 		}else{
 			holder = (ViewHolder) convertView.getTag();
 		}
-		//设置数据
+		//璁剧疆鏁版嵁
 		Map<String, String> item = data.get(position);
 		holder.textBookName.setText(Html.fromHtml(item.get("name")));
 		holder.textPlace.setText(Html.fromHtml(item.get("place")));
 		holder.textAuthor.setText(Html.fromHtml(item.get("author")));
-		//设置不同的背景色
+		//璁剧疆涓嶅悓鐨勮儗鏅壊
 		if(position%2 == 0){
 			holder.textBookName.setBackgroundColor(Color.rgb(245,245,245));
 			holder.textPlace.setBackgroundColor(Color.rgb(245,245,245));
@@ -76,7 +76,7 @@ public class ListBookAdapter extends BaseAdapter{
 	}
 	
 	/**
-	 * 用来装item中的组件
+	 * 鐢ㄦ潵瑁卛tem涓殑缁勪欢
 	 * @author litao
 	 *
 	 */

@@ -10,13 +10,13 @@ public class Book implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String Name;  //Êé±¾Ãû³Æ
-	private String editorAndPublic;  //Ö÷±à£¬³ö°æÉç
-	private String bookId; //Ë÷ÊéºÅ
-	private String barcode; //ÌõÂëºÅ
-	private String place; //¹İ²ØµØ
-	private String canBorrowNum; //¿É½è¸±±¾
-	private ArrayList<HashMap<String,String>> placeDetail; //¹İ²ØµØ¿É½è±¾ÊıÏêÏ¸ĞÅÏ¢
+	private String Name;  //ä¹¦æœ¬åç§°
+	private String editorAndPublic;  //ä¸»ç¼–ï¼Œå‡ºç‰ˆç¤¾
+	private String bookId; //ç´¢ä¹¦å·
+	private String barcode; //æ¡ç å·
+	private String place; //é¦†è—åœ°
+	private String canBorrowNum; //å¯å€Ÿå‰¯æœ¬
+	private ArrayList<HashMap<String,String>> placeDetail; //é¦†è—åœ°å¯å€Ÿæœ¬æ•°è¯¦ç»†ä¿¡æ¯
 	
 	public String getName() {
 		return Name;

@@ -19,11 +19,11 @@ public class OperateData {
 		myHelper = new MySqlHelper(context);
 	}
 	
-	//²åÈëÊı¾İ
+	//æ’å…¥æ•°æ®
 	public Long insertData(Book book){
 		if(book.getBarcode() != null){
 			if(findByBarcode(book.getBarcode())){
-				return (long) -3;//±íÊ¾Êı¾İÒÑ¾­´æÔÚÁË
+				return (long) -3;//è¡¨ç¤ºæ•°æ®å·²ç»å­˜åœ¨äº†
 			}
 		}
 		if(myHelper != null){
@@ -96,7 +96,7 @@ public class OperateData {
 		return list;
 	}
 	
-	//É¾³ıÊı¾İ
+	//åˆ é™¤æ•°æ®
 	public int deleteData(Book book){
 		try{
 			db = myHelper.getWritableDatabase();
@@ -114,7 +114,7 @@ public class OperateData {
 		}
 		return 0;
 	}
-	//¸ù¾İbarcode À´²éÕÒÊı¾İ
+	//æ ¹æ®barcode æ¥æŸ¥æ‰¾æ•°æ®
 	public boolean findByBarcode(String barcode){
 		String selection = MySqlHelper.BARCODE + "= ?";
 		String[] selectionArgs = {barcode};
@@ -129,7 +129,7 @@ public class OperateData {
 		}
 		return false;
 	}
-	//¹Ø±ÕÊı¾İ¿â
+	//å…³é—­æ•°æ®åº“
 	public void closeDB(){
 		if(db != null){
 			if(db.isOpen()){

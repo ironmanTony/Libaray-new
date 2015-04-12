@@ -56,7 +56,7 @@ public class SelectResultActivity extends Activity{
 		public void handleMessage(Message msg) {
 			// TODO Auto-generated method stub
 			switch(msg.what){
-			case 0 ://²éÑ¯³É¹¦
+			case 0 ://æŸ¥è¯¢æˆåŠŸ
 				List<HashMap<String, String>> data = new ArrayList<HashMap<String, String>>();
 				if(selectBook != null){
 					List<Book> books = selectBook.getCanBorrowBook();
@@ -72,14 +72,14 @@ public class SelectResultActivity extends Activity{
 					}
 					listSelectedBook.setAdapter(new ListBookAdapter(SelectResultActivity.this, data));
 				}else{
-					Toast.makeText(SelectResultActivity.this, "Ã»ÓĞÊı¾İ", Toast.LENGTH_SHORT).show();
+					Toast.makeText(SelectResultActivity.this, "æ²¡æœ‰æ•°æ®", Toast.LENGTH_SHORT).show();
 				}
 				break;
-			case 1 ://ÍøÂçÒì³£
-				Toast.makeText(SelectResultActivity.this, "ÍøÂçÒì³£»ò²éÑ¯³ö´í", Toast.LENGTH_SHORT).show();
+			case 1 ://ç½‘ç»œå¼‚å¸¸
+				Toast.makeText(SelectResultActivity.this, "ç½‘ç»œå¼‚å¸¸æˆ–æŸ¥è¯¢å‡ºé”™", Toast.LENGTH_SHORT).show();
 				break;
-			case 2://²éÑ¯ÁË£¬µ«ÊÇÃ»ÓĞÊı¾İ
-				Toast.makeText(SelectResultActivity.this, "Ã»ÓĞÊı¾İ²éÑ¯Ê§°Ü", Toast.LENGTH_SHORT).show();
+			case 2://æŸ¥è¯¢äº†ï¼Œä½†æ˜¯æ²¡æœ‰æ•°æ®
+				Toast.makeText(SelectResultActivity.this, "æ²¡æœ‰æ•°æ®æŸ¥è¯¢å¤±è´¥", Toast.LENGTH_SHORT).show();
 				break;
 			}
 			proDialog.dismiss();
@@ -90,11 +90,11 @@ public class SelectResultActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Òş²Ø±êÌâÀ¸
+		//éšè—æ ‡é¢˜æ 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_select_result);
 		listSelectedBook = (ListView) this.findViewById(R.id.list_books);
-		//¸ølistSelectedBook ÉèÖÃµ¥»÷ÏìÓ¦£¬ÏÔÊ¾Êé±¾ÏêÏ¸ĞÅÏ¢
+		//ç»™listSelectedBook è®¾ç½®å•å‡»å“åº”ï¼Œæ˜¾ç¤ºä¹¦æœ¬è¯¦ç»†ä¿¡æ¯
 		listSelectedBook.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -109,9 +109,9 @@ public class SelectResultActivity extends Activity{
 				}
 			}
 		});
-		//ÉèÖÃspinnerÓÃÀ´Ñ¡ÔñÊÇ²éÑ¯È«²¿µÄ»¹ÊÇ²éÑ¯¿É½èµÄ¡£
+		//è®¾ç½®spinnerç”¨æ¥é€‰æ‹©æ˜¯æŸ¥è¯¢å…¨éƒ¨çš„è¿˜æ˜¯æŸ¥è¯¢å¯å€Ÿçš„ã€‚
 		Spinner spinner = (Spinner) findViewById(R.id.spinner);
-		String[] selectOption = {"¿É½è","È«²¿"};
+		String[] selectOption = {"å¯å€Ÿ","å…¨éƒ¨"};
 		ArrayAdapter<String> adap = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,selectOption);
 		adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setFocusable(true);
@@ -136,7 +136,7 @@ public class SelectResultActivity extends Activity{
 			}
 		});
 		
-		//ÉèÖÃTabHostÀ´
+		//è®¾ç½®TabHostæ¥
 		TabHost tabHost = (TabHost) findViewById(R.id.tabhost);
 		tabHost.setup();
 		tabHost.addTab(tabHost.newTabSpec("tab1")
@@ -148,7 +148,7 @@ public class SelectResultActivity extends Activity{
 		tabHost.getCurrentTabView().setBackgroundResource(R.drawable.store_2);
 		tabHost.getTabWidget().getChildAt(1).setBackgroundResource(R.drawable.hart_1);
 		final EditText editName = (EditText)findViewById(R.id.edit_book_name);
-		//µÃµ½°´Å¥£¬²¢ÇÒ¸ø°´Å¥Ìí¼ÓÏìÓ¦£¬µã»÷°´Å¥²éÑ¯
+		//å¾—åˆ°æŒ‰é’®ï¼Œå¹¶ä¸”ç»™æŒ‰é’®æ·»åŠ å“åº”ï¼Œç‚¹å‡»æŒ‰é’®æŸ¥è¯¢
 		Button buttonSearch = (Button) findViewById(R.id.button_search);
 		buttonSearch.setOnClickListener(new OnClickListener() {
 			@Override
@@ -156,29 +156,29 @@ public class SelectResultActivity extends Activity{
 				// TODO Auto-generated method stub
 				String name = editName.getText().toString().trim();
 				if(name.equals("")){
-					Toast.makeText(SelectResultActivity.this, "Ãû³Æ²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT).show();
+					Toast.makeText(SelectResultActivity.this, "åç§°ä¸èƒ½ä¸ºç©º", Toast.LENGTH_SHORT).show();
 				}else{
-					//¿ªÆôĞÂÏß³ÌÈ¥ÍøÂçÄÃÊı¾İ
+					//å¼€å¯æ–°çº¿ç¨‹å»ç½‘ç»œæ‹¿æ•°æ®
 					selectBook = new SelectCanBorrow(name,handler,SelectResultActivity.this);
 					selectBook.startThread(isSelectAll);
 					
-					//Æô¶¯ÌáĞÑÓÃ»§µÈ´ıµÄ¶Ô»°¿ò
-					proDialog = ProgressDialog.show(SelectResultActivity.this,"Êı¾İ¼ÓÔØÖĞ","ÍæÃü¼ÓÔØÖĞ£¬ÇëÉÔºó¡£¡£¡£");
+					//å¯åŠ¨æé†’ç”¨æˆ·ç­‰å¾…çš„å¯¹è¯æ¡†
+					proDialog = ProgressDialog.show(SelectResultActivity.this,"æ•°æ®åŠ è½½ä¸­","ç©å‘½åŠ è½½ä¸­ï¼Œè¯·ç¨åã€‚ã€‚ã€‚");
 					proDialog.setCancelable(true);
 				}
 			}
 		});
 		listMyStoredBook = (ListView) findViewById(R.id.list_my_stored_book);
-		//¸øtabHostÉèÖÃÇĞ»»¼àÌı
-		//»ñÈ¡TabWeiget¶ÔÏó
+		//ç»™tabHostè®¾ç½®åˆ‡æ¢ç›‘å¬
+		//è·å–TabWeigetå¯¹è±¡
 		final TabWidget tw = tabHost.getTabWidget();
-		//»ñÈ¡TabWidgetµÄTabÊıÁ¿
+		//è·å–TabWidgetçš„Tabæ•°é‡
 		final int tabSize = tw.getChildCount();
 		tabHost.setOnTabChangedListener(new OnTabChangeListener() {
 			@Override
 			public void onTabChanged(String tabId) {
 				// TODO Auto-generated method stub
-				//Èç¹ûÊÇÌø×ªµ½ÊÕ²ØÒ³Ãæ
+				//å¦‚æœæ˜¯è·³è½¬åˆ°æ”¶è—é¡µé¢
 				if(tabId.equals("tab2")){
 					OperateData oper = new OperateData(SelectResultActivity.this);
 					List<Book> list = oper.selectData();
@@ -192,7 +192,7 @@ public class SelectResultActivity extends Activity{
 						data.add(map);
 					}
 					updateListView(data);
-					//¸ú»»±³¾°
+					//è·Ÿæ¢èƒŒæ™¯
 					for(int i = 0;i<tabSize;i++){
 						View v = tw.getChildAt(i);
 						if(i==1){
@@ -214,9 +214,9 @@ public class SelectResultActivity extends Activity{
 			}
 		});
 		
-		//¸øËÑË÷ListViewÌí¼Ó³¤°´£¬³¤°´ÊÕ²Ø
+		//ç»™æœç´¢ListViewæ·»åŠ é•¿æŒ‰ï¼Œé•¿æŒ‰æ”¶è—
 		this.registerForContextMenu(listSelectedBook);
-		//¸øÊÕ²ØListViewÌí¼ÓContextMenu
+		//ç»™æ”¶è—ListViewæ·»åŠ ContextMenu
 		this.registerForContextMenu(listMyStoredBook);
 	}
 
@@ -224,15 +224,15 @@ public class SelectResultActivity extends Activity{
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 //		getMenuInflater().inflate(R.menu.select_result, menu);
-		menu.add(Menu.NONE,1,1,"ÉèÖÃ");
-		menu.add(Menu.NONE,2,2,"ÍË³ö");
+		menu.add(Menu.NONE,1,1,"è®¾ç½®");
+		menu.add(Menu.NONE,2,2,"é€€å‡º");
 		return true;
 	}
 
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
-		//»ñµÃÊÇµÚ¼¸×é°´Å¥£¬´Ó¶øÇø·ÖÊÇÊÕ²Ø»¹ÊÇÉ¾³ı
+		//è·å¾—æ˜¯ç¬¬å‡ ç»„æŒ‰é’®ï¼Œä»è€ŒåŒºåˆ†æ˜¯æ”¶è—è¿˜æ˜¯åˆ é™¤
 		int groupId = item.getGroupId();
 		AdapterView.AdapterContextMenuInfo info ;
 		try{
@@ -242,33 +242,33 @@ public class SelectResultActivity extends Activity{
 			return false;
 		}
 		switch(groupId){
-		case 0://ÊÕ²ØÑ¡ÖĞµÄbook//±íÊ¾ÊÇµÚ0×é°´Å¥£¬¾ÍÊÇÖ»ÓĞÊÕ²Ø
+		case 0://æ”¶è—é€‰ä¸­çš„book//è¡¨ç¤ºæ˜¯ç¬¬0ç»„æŒ‰é’®ï¼Œå°±æ˜¯åªæœ‰æ”¶è—
 			if(selectBook != null){
 				List<Book> books = selectBook.getCanBorrowBook();
 				Book book = books.get(info.position);
 				OperateData operate = new OperateData(SelectResultActivity.this);
 				Long judge = operate.insertData(book);
 				if(judge == -1){
-					Toast.makeText(SelectResultActivity.this, "ÊÕ²ØÊ§°Ü£¡", Toast.LENGTH_SHORT).show();
+					Toast.makeText(SelectResultActivity.this, "æ”¶è—å¤±è´¥ï¼", Toast.LENGTH_SHORT).show();
 				}else if(judge == -3){
-					Toast.makeText(SelectResultActivity.this, "Êı¾İÒÑ´æÔÚ£¡", Toast.LENGTH_SHORT).show();
+					Toast.makeText(SelectResultActivity.this, "æ•°æ®å·²å­˜åœ¨ï¼", Toast.LENGTH_SHORT).show();
 				}else{
-					Toast.makeText(SelectResultActivity.this, "ÊÕ²Ø³É¹¦£¡", Toast.LENGTH_SHORT).show();
+					Toast.makeText(SelectResultActivity.this, "æ”¶è—æˆåŠŸï¼", Toast.LENGTH_SHORT).show();
 				}
 				operate.closeDB();
 				operate = null;
 				books = null;
 				book = null;
 			}else{
-				Toast.makeText(SelectResultActivity.this, "ÊÕ²ØÊ§°Ü£¡", Toast.LENGTH_SHORT).show();
+				Toast.makeText(SelectResultActivity.this, "æ”¶è—å¤±è´¥ï¼", Toast.LENGTH_SHORT).show();
 			}
 			break;
-		case 1://±íÊ¾ÊÇÉ¾³ı±»Ñ¡ÖĞ
+		case 1://è¡¨ç¤ºæ˜¯åˆ é™¤è¢«é€‰ä¸­
 			OperateData oper = new OperateData(SelectResultActivity.this);
 			List<Book> books = oper.selectData();
 			if(oper.deleteData(books.get(info.position)) > 0){
 				books.remove(info.position);
-				//ÓÃÀ´Ë¢ĞÂlistMyStoredBook
+				//ç”¨æ¥åˆ·æ–°listMyStoredBook
 				List<HashMap<String, String>> data = new ArrayList<HashMap<String, String>>();
 				for(int i =0;i<books.size();i++){
 					HashMap<String,String> map = new HashMap<String, String>();
@@ -277,11 +277,11 @@ public class SelectResultActivity extends Activity{
 					map.put("author", books.get(i).getEditorAndPublic());
 					data.add(map);
 				}
-				//ÔÚÕâÀï¸üĞÂListView
+				//åœ¨è¿™é‡Œæ›´æ–°ListView
 				updateListView(data);
-				Toast.makeText(SelectResultActivity.this, "É¾³ı³É¹¦ £¡", Toast.LENGTH_SHORT).show();
+				Toast.makeText(SelectResultActivity.this, "åˆ é™¤æˆåŠŸ ï¼", Toast.LENGTH_SHORT).show();
 			}else{
-				Toast.makeText(SelectResultActivity.this, "É¾³ıÊ§°Ü £¡", Toast.LENGTH_SHORT).show();
+				Toast.makeText(SelectResultActivity.this, "åˆ é™¤å¤±è´¥ ï¼", Toast.LENGTH_SHORT).show();
 			}
 			oper.closeDB();
 			break;
@@ -295,14 +295,14 @@ public class SelectResultActivity extends Activity{
 			ContextMenuInfo menuInfo) {
 		// TODO Auto-generated method stub
 		if(v.getId() == listSelectedBook.getId()){
-			menu.add(0,1,0,"ÊÕ²Ø");
+			menu.add(0,1,0,"æ”¶è—");
 		}else{
-			menu.add(1,0,0,"É¾³ı");
+			menu.add(1,0,0,"åˆ é™¤");
 		}
 		super.onCreateContextMenu(menu, v, menuInfo);
 	}
 	
-	//¸üĞÂListViewÊı¾İ
+	//æ›´æ–°ListViewæ•°æ®
 	private void updateListView(List<HashMap<String, String>> data){
 		listMyStoredBook.setAdapter(new ListBookAdapter(SelectResultActivity.this, data));
 	}
@@ -311,15 +311,15 @@ public class SelectResultActivity extends Activity{
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
 		switch(item.getItemId()){
-		case 1://ÉèÖÃ
+		case 1://è®¾ç½®
 			Intent intent = new Intent(SelectResultActivity.this, SettingsActivity.class);
 			startActivity(intent);
 			break;
-		case 2://ÍË³ö
+		case 2://é€€å‡º
 			AlertDialog.Builder builder = new AlertDialog.Builder(SelectResultActivity.this);
-			builder.setTitle("ÍË³ö");
-			builder.setMessage("È·¶¨ÍË³ö£¿");
-			builder.setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+			builder.setTitle("é€€å‡º");
+			builder.setMessage("ç¡®å®šé€€å‡ºï¼Ÿ");
+			builder.setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -327,7 +327,7 @@ public class SelectResultActivity extends Activity{
 					System.exit(0);
 				}
 			});
-			builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+			builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {

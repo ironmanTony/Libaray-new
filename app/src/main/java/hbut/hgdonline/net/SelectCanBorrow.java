@@ -39,14 +39,14 @@ public class SelectCanBorrow implements Runnable{
 		try {
 			books = new ArrayList<Book>();
 			Document doc =null;
-			if(isSelectAll){//²éÑ¯ËùÓĞµÄÊé
+			if(isSelectAll){//æŸ¥è¯¢æ‰€æœ‰çš„ä¹¦
 				doc  = Jsoup.connect(MyURL.selectAllURL(getSchoolNum())).data("strText",name).data("displaypg", getLimitNum()).timeout(20000).get();
-			}else{//²éÑ¯¿É½èµÄÊé
+			}else{//æŸ¥è¯¢å¯å€Ÿçš„ä¹¦
 				doc  = Jsoup.connect(MyURL.selectKejieURL(getSchoolNum())).data("title",name).data("displaypg", getLimitNum()).timeout(20000).get();
 			}
 			Element bookList = doc.getElementById("search_book_list");
 			if(bookList == null){
-				handler.sendEmptyMessage(2);//±íÊ¾²éÑ¯µÄÊı¾İÎª¿Õ
+				handler.sendEmptyMessage(2);//è¡¨ç¤ºæŸ¥è¯¢çš„æ•°æ®ä¸ºç©º
 			}else{
 				Elements bookNames = bookList.getElementsByClass("book_list_info");
 				for(int i = 0;i < bookNames.size(); i++){
@@ -66,25 +66,25 @@ public class SelectCanBorrow implements Runnable{
 					setBookDetail(num,book);
 					books.add(book);
 				}
-				handler.sendEmptyMessage(0);//±íÊ¾²éÑ¯µÄÊı¾İÎª¿Õ
+				handler.sendEmptyMessage(0);//è¡¨ç¤ºæŸ¥è¯¢çš„æ•°æ®ä¸ºç©º
 			}
 		} catch (IOException e) {
-			handler.sendEmptyMessage(1);//±íÊ¾ÍøÂç»òÕß²éÑ¯³ö´í
+			handler.sendEmptyMessage(1);//è¡¨ç¤ºç½‘ç»œæˆ–è€…æŸ¥è¯¢å‡ºé”™
 			e.printStackTrace();
 		}
 	}
-	//µÃµ½·µ»ØÊı¾İ
+	//å¾—åˆ°è¿”å›æ•°æ®
 	public List<Book> getCanBorrowBook(){
 		return books;
 	}
 	
-	//¿ªÊ¼ÁªÍø»ñµÃÊı¾İ
+	//å¼€å§‹è”ç½‘è·å¾—æ•°æ®
 	public void startThread(boolean isSelectAll){
 		this.isSelectAll = isSelectAll;
 		new Thread(this).start();
 	}
 	
-	//µÃµ½bookµÄÏêÏ¸ĞÅÏ¢
+	//å¾—åˆ°bookçš„è¯¦ç»†ä¿¡æ¯
 	private void setBookDetail(String num, Book book ){
 		try{
 			Document doc = Jsoup.connect(MyURL.selectDetail(num, getSchoolNum())).timeout(1000).get();
@@ -107,7 +107,7 @@ public class SelectCanBorrow implements Runnable{
 		}
 	}
 	/**
-	 * ÔÚÕâÀï¶ÁÈ¡ÓÃ»§ÉèÖÃµÄÑ§Ğ£´úÂë
+	 * åœ¨è¿™é‡Œè¯»å–ç”¨æˆ·è®¾ç½®çš„å­¦æ ¡ä»£ç 
 	 * @return
 	 */
 	private int getSchoolNum(){

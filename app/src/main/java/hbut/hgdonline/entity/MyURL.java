@@ -2,47 +2,47 @@ package hbut.hgdonline.entity;
 
 public class MyURL {
 	/**
-	 *Ñ§Ğ£´úºÅ£º
-	 *1.´ú±íºş±±¹¤Òµ´óÑ§
-	 *2.´ú±íÎäºº¿Æ¼¼´óÑ§
-	 *3.´ú±íÎäºº¹¤³Ì´óÑ§
+	 *å­¦æ ¡ä»£å·ï¼š
+	 *1.ä»£è¡¨æ¹–åŒ—å·¥ä¸šå¤§å­¦
+	 *2.ä»£è¡¨æ­¦æ±‰ç§‘æŠ€å¤§å­¦
+	 *3.ä»£è¡¨æ­¦æ±‰å·¥ç¨‹å¤§å­¦
 	 */
-	public final static int HBUT = 1;//ºş±±¹¤Òµ´óÑ§
-	public final static int WUST = 2;//Îäºº¿Æ¼¼´óÑ§
-	public final static int WIT = 3;//Îäºº¹¤³Ì´óÑ§
+	public final static int HBUT = 1;//æ¹–åŒ—å·¥ä¸šå¤§å­¦
+	public final static int WUST = 2;//æ­¦æ±‰ç§‘æŠ€å¤§å­¦
+	public final static int WIT = 3;//æ­¦æ±‰å·¥ç¨‹å¤§å­¦
 	
 	/**
-	 * ºş±±¹¤Òµ´óÑ§Í¼Êé¹İ
+	 * æ¹–åŒ—å·¥ä¸šå¤§å­¦å›¾ä¹¦é¦†
 	 */
-	//¼ìË÷È«²¿ÊıÄ¿
+	//æ£€ç´¢å…¨éƒ¨æ•°ç›®
 	private final static String ALL_URL_HBUT = "http://202.114.181.3:8080/opac/openlink.php?strSearchType=title&match_flag=forward&historyCount=1&doctype=ALL&showmode=list&sort=CATA_DATE&orderby=desc&location=ALL";
-	//¿É½èÊéÄ¿
+	//å¯å€Ÿä¹¦ç›®
 	private final static String KEJIE_URL_HBUT = "http://202.114.181.3:8080/opac/openlink.php?location=ALL&doctype=ALL&lang_code=ALL&match_flag=forward&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=yes&with_ebook=&with_ebook=";
-	//²éÑ¯ÏêÏ¸ĞÅÏ¢
+	//æŸ¥è¯¢è¯¦ç»†ä¿¡æ¯
 	private final static String BOOK_DETAIL_HBUT = "http://202.114.181.3:8080/opac/ajax_item.php?marc_no=";
 	
 	/**
-	 * Îäºº¿Æ¼¼´óÑ§Í¼Êé¹İµÄÁ´½Ó
+	 * æ­¦æ±‰ç§‘æŠ€å¤§å­¦å›¾ä¹¦é¦†çš„é“¾æ¥
 	 * @return
 	 */
-	//²éÑ¯ËùÓĞµÄÊé
+	//æŸ¥è¯¢æ‰€æœ‰çš„ä¹¦
 	private final static String ALL_URL_WUST = "http://opac.lib.wust.edu.cn:8080/opac/openlink.php?strSearchType=title&match_flag=forward&historyCount=1&doctype=ALL&showmode=list&sort=CATA_DATE&orderby=desc&dept=ALL";
-	//²éÑ¯¿É½èÍ¼Êé
+	//æŸ¥è¯¢å¯å€Ÿå›¾ä¹¦
 	private final static String KEJIE_URL_WUST = "http://opac.lib.wust.edu.cn:8080/opac/openlink.php?dept=ALL&doctype=ALL&lang_code=ALL&match_flag=forward&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=yes&with_ebook=&with_ebook=";
-	//²éÑ¯µØµã¼°ÏêÏ¸ĞÅÏ¢
+	//æŸ¥è¯¢åœ°ç‚¹åŠè¯¦ç»†ä¿¡æ¯
 	private final static String BOOK_DETAIL_WUST = "http://opac.lib.wust.edu.cn:8080/opac/item.php?marc_no=";
 	/**
-	 * Îäºº¹¤³Ì´óÑ§
+	 * æ­¦æ±‰å·¥ç¨‹å¤§å­¦
 	 * @return
 	 */
-	//ËùÓĞµÄÊéÄ¿
+	//æ‰€æœ‰çš„ä¹¦ç›®
 	private final static String ALL_URL_WIT = "http://218.199.187.110/opac/openlink.php?strSearchType=title&match_flag=forward&historyCount=1&doctype=ALL&showmode=list&sort=CATA_DATE&orderby=desc&dept=ALL";
-	//¿É½èÊıÄ¿
+	//å¯å€Ÿæ•°ç›®
 	private final static String KEJIE_URL_WIT = "http://218.199.187.110/opac/openlink.php?dept=ALL&doctype=ALL&lang_code=ALL&match_flag=forward&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=yes&with_ebook=&with_ebook=";
-	//²éÑ¯µØµã¼°ÏêÏ¸ĞÅÏ¢
+	//æŸ¥è¯¢åœ°ç‚¹åŠè¯¦ç»†ä¿¡æ¯
 	private final static String BOOK_DETAIL_WIT = "http://218.199.187.110/opac/item.php?marc_no=";
 	
-	//µÃµ½²éÑ¯È«²¿ÊéµÄÁ´½Ó
+	//å¾—åˆ°æŸ¥è¯¢å…¨éƒ¨ä¹¦çš„é“¾æ¥
 	public static String selectAllURL(int n){
 		switch(n){
 		case HBUT:return ALL_URL_HBUT;
@@ -52,7 +52,7 @@ public class MyURL {
 		}
 	}
 	
-	//µÃµ½²éÑ¯¿É½èÊéµÄÁ´½Ó
+	//å¾—åˆ°æŸ¥è¯¢å¯å€Ÿä¹¦çš„é“¾æ¥
 	public static String selectKejieURL(int n){
 		switch(n){
 		case HBUT:return KEJIE_URL_HBUT;
@@ -62,7 +62,7 @@ public class MyURL {
 		}
 	}
 	
-	//²éÑ¯ÏêÏ¸ĞÅÏ¢
+	//æŸ¥è¯¢è¯¦ç»†ä¿¡æ¯
 	public static String selectDetail(String bookNum,int n){
 		switch(n){
 		case HBUT:return BOOK_DETAIL_HBUT + bookNum;
