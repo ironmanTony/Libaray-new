@@ -1,0 +1,43 @@
+<resources>
+
+    <string name="title_activity_settings">设置</string>
+	
+	
+	<!-- 设置查询条数 -->
+    <string name="cal_set_limit">查询条数设置</string>
+    <string name="key_limit">limit</string>
+    <string name="title_limit">每次查询的条数</string>
+    <string name="summary_limit">查询条数越少查询越快</string>
+    
+    <string-array name="arry_limit">
+        <item>10条</item>
+        <item>15条</item>
+        <item>20条</item>
+        <item>25条</item>
+        <item>30条</item>
+        <item>40条</item>
+    </string-array>
+    <string-array name="arry_limit_value">
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>40</item>
+    </string-array>
+    
+    <!-- 设置学校 -->
+    <string name="title_school_cal">学校设置</string>
+    <string name="key_school">school</string>
+    <string name="title_school">选择学校</string>
+    <string-array name="arry_school">
+        <item>湖北工业大学</item>
+        <item>武汉科技大学</item>
+        <item>武汉工程大学</item>
+    </string-array>
+    <string-array name="arry_school_value">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

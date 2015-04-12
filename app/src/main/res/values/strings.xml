@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Library</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="my_book">我的收藏</string>
+    <string name="button_search">查询</string>
+
+    <color name="divider_color">#000000</color>
+
+    <string name="title_activity_book_detail">书本详细信息</string>
+
+</resources>

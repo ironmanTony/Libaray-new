@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory 
+        android:title="@string/cal_set_limit">
+    <ListPreference
+        android:defaultValue="20"
+        android:entries="@array/arry_limit"
+        android:entryValues="@array/arry_limit_value"
+        android:key="@string/key_limit"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/title_limit"
+        android:summary="@string/summary_limit" />
+        
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="@string/title_school_cal">
+        
+        <ListPreference 
+            android:defaultValue="1"
+            android:entries="@array/arry_school"
+            android:entryValues="@array/arry_school_value"
+            android:key="@string/key_school"
+            android:title="@string/title_school"/>
+        
+    </PreferenceCategory>
+
+</PreferenceScreen>

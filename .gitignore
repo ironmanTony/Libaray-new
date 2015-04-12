@@ -1,0 +1,10 @@
+.idea
+build
+*.iml
+gradle/
+.gradle/
+import-summary.txt
+local.properties
+settings.gradle
+*/buld/
+*/libs/

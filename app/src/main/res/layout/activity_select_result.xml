@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectResultActivity" >
+
+   <TabHost 
+       android:id="@+id/tabhost"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       >
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+        
+        <FrameLayout 
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:background="#E9FCFF"
+            >
+            
+            <LinearLayout 
+                android:id="@+id/tab1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                >
+                <LinearLayout 
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="#E9FCFF"
+                    android:paddingTop="5dip"
+                    >
+                    
+                    <Spinner 
+                        android:id="@+id/spinner"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.7"
+                        android:spinnerMode="dropdown"
+                        />
+                    <EditText 
+                        android:id="@+id/edit_book_name"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:layout_weight="3"
+                        />
+                    <Button 
+                        android:id="@+id/button_search"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dip"
+                        android:paddingRight="5dip"
+                        android:text="@string/button_search"
+                        android:background="@drawable/shape"
+                        />
+                </LinearLayout>
+                <ListView 
+                    android:id="@+id/list_books"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@color/divider_color"
+                    android:dividerHeight="2dp"
+                    ></ListView>
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/tab2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView android:id="@+id/text_my_book"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/my_book"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    android:background="#E9FCFF"
+                    />
+                
+                <ListView 
+                    android:id="@+id/list_my_stored_book"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@color/divider_color"
+                    android:dividerHeight="2dp"></ListView>
+                
+            </LinearLayout>
+        </FrameLayout>
+        
+    	<TabWidget android:id="@android:id/tabs"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:orientation="horizontal"
+    	    ></TabWidget>
+    	</LinearLayout>
+   </TabHost>
+
+</RelativeLayout>
